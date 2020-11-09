@@ -4,7 +4,7 @@ variable "rg_env" {
     rg_name = {
       location    = "Japan East"
       name        = "JpEast"
-      environment  = "dev"
+      environment = "dev"
     }
   }
 }
