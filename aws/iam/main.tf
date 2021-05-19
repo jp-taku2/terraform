@@ -11,10 +11,6 @@ resource "aws_iam_user" "jp_taku2" {
   }
 }
 
-resource "aws_iam_access_key" "jp_taku2" {
-  user = aws_iam_user.jp_taku2.name
-}
-
 resource "aws_iam_user_policy" "power-user" {
   name = "power-user"
   user = aws_iam_user.jp_taku2.name
