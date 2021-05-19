@@ -38,7 +38,7 @@ resource "aws_iam_user_policy" "power-user" {
       ],
       "Effect": "Allow",
       "Resource": "*"
-    },
+    }
   ]
 }
 EOF
