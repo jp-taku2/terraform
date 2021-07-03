@@ -1,11 +1,11 @@
 terraform {
-  required_version = "0.15.3"
+  required_version = "1.0.1"
   backend "remote" {
     hostname     = "app.terraform.io"
     organization = "jp_taku2"
 
     workspaces {
-      name = "terraform-aws-iam"
+      name = "terraform-aws-vpc"
     }
   }
 }
