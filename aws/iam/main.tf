@@ -35,6 +35,9 @@ data "aws_iam_policy_document" "sandbox-powe-user" {
       "organizations:*",
       "account:*"
     ]
+    resources = [
+      "*"
+    ]
   }
 }
 
