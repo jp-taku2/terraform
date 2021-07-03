@@ -9,13 +9,13 @@ module "resource_group" {
 
   rg_env = {
     "1-Dev-JpEast" = {
-      location = "Japan East"
-      name = "Dev-JpEast"
+      location    = "Japan East"
+      name        = "Dev-JpEast"
       environment = "dev"
     },
     "2-Prod-JpEast" = {
-      location = "Japan East"
-      name = "Prod-JpEast"
+      location    = "Japan East"
+      name        = "Prod-JpEast"
       environment = "prod"
     }
   }

@@ -1,5 +1,5 @@
 variable "rg_env" {
-  type = map
+  type = map(any)
   default = {
     rg_name = {
       location    = "Japan East"
