@@ -31,7 +31,6 @@ data "aws_iam_policy_document" "sandbox-powe-user" {
     sid = "SandboxPoweUserNotAction"
     effect = "Allow"
     not_actions = [
-      "iam:*",
       "organizations:*",
       "account:*"
     ]
