@@ -12,8 +12,8 @@ resource "aws_iam_user" "jp_taku2" {
 }
 
 data "aws_iam_policy_document" "sandbox-powe-user" {
-  statement{
-    sid = "AllowSandboxPoweUser"
+  statement {
+    sid    = "AllowSandboxPoweUser"
     effect = "Allow"
     actions = [
       "iam:CreateServiceLinkedRole",
@@ -28,7 +28,7 @@ data "aws_iam_policy_document" "sandbox-powe-user" {
   }
 
   statement {
-    sid = "SandboxPoweUserNotAction"
+    sid    = "SandboxPoweUserNotAction"
     effect = "Allow"
     not_actions = [
       "organizations:*",
@@ -41,7 +41,7 @@ data "aws_iam_policy_document" "sandbox-powe-user" {
 }
 
 resource "aws_iam_user_policy" "power-user" {
-  name = "power-user"
-  user = aws_iam_user.jp_taku2.name
+  name   = "power-user"
+  user   = aws_iam_user.jp_taku2.name
   policy = data.aws_iam_policy_document.sandbox-powe-user.json
 }
