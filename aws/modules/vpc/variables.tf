@@ -50,7 +50,7 @@ variable "azs" {
 
 variable "public_subnets" {
   description = "A map of public subnets inside the VPC"
-  type        = map
+  type        = map(any)
   default     = {}
   validation {
     condition = (
@@ -62,7 +62,7 @@ variable "public_subnets" {
 
 variable "private_subnets" {
   description = "A map of private subnets inside the VPC"
-  type        = map
+  type        = map(any)
   default     = {}
   validation {
     condition = (
