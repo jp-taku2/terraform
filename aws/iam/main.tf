@@ -25,7 +25,8 @@ data "aws_iam_policy_document" "sandbox-powe-user" {
     resources = [
       "*"
     ]
-  },
+  }
+
   statement {
     sid = "SandboxPoweUserNotAction"
     effect = "Allow"
@@ -34,7 +35,7 @@ data "aws_iam_policy_document" "sandbox-powe-user" {
       "organizations:*",
       "account:*"
     ]
-  },
+  }
 }
 
 resource "aws_iam_user_policy" "power-user" {
