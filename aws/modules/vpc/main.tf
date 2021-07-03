@@ -46,8 +46,8 @@ resource "aws_eip" "nat" {
 
 resource "aws_nat_gateway" "nat" {
   for_each      = var.public_subnets
-  allocation_id = aws_eip.nat.*.id[each.key]
-  subnet_id     = aws_subnet.public.*.id[each.key]
+  allocation_id = aws_eip.nat[each.key].id
+  subnet_id     = aws_subnet.public[each.key].id
 }
 
 resource "aws_route_table" "igw" {
@@ -63,7 +63,7 @@ resource "aws_route_table" "igw" {
 
 resource "aws_route_table" "natgw" {
   vpc_id   = aws_vpc.vpc.id
-  for_each = aws_nat_gateway.nat.*.id[each.key]
+  for_each = var.public_subnets
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
@@ -76,5 +76,5 @@ resource "aws_route_table" "natgw" {
 resource "aws_route_table_association" "public" {
   for_each       = var.public_subnets
   route_table_id = aws_route_table.igw.id
-  subnet_id      = aws_subnet.public.*.id[each.key]
+  subnet_id      = aws_subnet.public[each.key].id
 }
