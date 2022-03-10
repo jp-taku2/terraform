@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "ap-northeast-1"
-}
-
 resource "aws_iam_user" "jp_taku2" {
   name = "jp_taku2"
   path = "/admin/"
