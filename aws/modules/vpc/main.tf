@@ -66,7 +66,7 @@ resource "aws_route_table" "natgw" {
   for_each = var.public_subnets
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.igw.id
+    gateway_id = aws_nat_gateway.nat[each.key].id
   }
   tags = {
     "Name" = "natgw"
@@ -77,4 +77,10 @@ resource "aws_route_table_association" "public" {
   for_each       = var.public_subnets
   route_table_id = aws_route_table.igw.id
   subnet_id      = aws_subnet.public[each.key].id
+}
+
+resource "aws_route_table_association" "private" {
+  for_each       = var.private_subnets
+  route_table_id = aws_route_table.natgw[each.value.nat].id
+  subnet_id      = aws_subnet.private[each.key].id
 }
