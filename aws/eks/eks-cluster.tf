@@ -1,9 +1,9 @@
 module "eks-cluster" {
   source = "../modules/eks"
 
-  cluster_name = "sand-box"
+  cluster_name     = "sand-box"
   cluster_role_arn = data.terraform_remote_state.iam.outputs.eks-cluster-role.arn
-  subnet_ids = local.subnet_ids
+  subnet_ids       = local.subnet_ids
 }
 
 locals {

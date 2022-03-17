@@ -39,7 +39,7 @@ module "vpc" {
     apps-1a = {
       cidr = "10.1.16.0/24"
       az   = "ap-northeast-1a"
-      nat = "dmz-1a"
+      nat  = "dmz-1a"
       tags = {
         Name = "apps-1a"
       }
@@ -48,7 +48,7 @@ module "vpc" {
     apps-1c = {
       cidr = "10.1.17.0/24"
       az   = "ap-northeast-1c"
-      nat = "dmz-1c"
+      nat  = "dmz-1c"
       tags = {
         Name = "apps-1c"
       }
@@ -57,7 +57,7 @@ module "vpc" {
     apps-1d = {
       cidr = "10.1.18.0/24"
       az   = "ap-northeast-1d"
-      nat = "dmz-1d"
+      nat  = "dmz-1d"
       tags = {
         Name = "apps-1d"
       }
@@ -66,7 +66,7 @@ module "vpc" {
     serverless-1a = {
       cidr = "10.1.19.0/24"
       az   = "ap-northeast-1a"
-      nat = "dmz-1a"
+      nat  = "dmz-1a"
       tags = {
         Name = "serverless-1a"
       }
@@ -75,7 +75,7 @@ module "vpc" {
     serverless-1c = {
       cidr = "10.1.20.0/24"
       az   = "ap-northeast-1c"
-      nat = "dmz-1c"
+      nat  = "dmz-1c"
       tags = {
         Name = "serverless-1c"
       }
@@ -84,7 +84,7 @@ module "vpc" {
     serverless-1d = {
       cidr = "10.1.21.0/24"
       az   = "ap-northeast-1d"
-      nat = "dmz-1d"
+      nat  = "dmz-1d"
       tags = {
         Name = "serverless-1d"
       }

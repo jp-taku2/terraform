@@ -1,11 +1,11 @@
 resource "aws_iam_role" "eks-fargate" {
   assume_role_policy = data.aws_iam_policy_document.eks-fargate.json
-  name = "eks-fargate"
+  name               = "eks-fargate"
 }
 
 resource "aws_iam_role_policy_attachment" "eks-cluster-AmazonEKSFargatePodExecutionRolePolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
-  role = aws_iam_role.eks-cluster.name
+  role       = aws_iam_role.eks-cluster.name
 }
 
 data "aws_iam_policy_document" "eks-fargate" {
